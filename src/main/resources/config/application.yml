@@ -1,0 +1,23 @@
+spring:
+  profiles:
+    include: >
+      db
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  flyway:
+    enabled: true
+
+  mvc: ## its for swagger
+    pathmatch:
+      matching-strategy: ant_path_matcher
+management:
+  endpoints:
+    web:
+      exposure:
+        include: mappings,health
+
+exchange:
+  margin: 2.0

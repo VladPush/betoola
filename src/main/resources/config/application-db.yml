@@ -1,0 +1,22 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+  h2:
+    console:
+      enabled: true
+
+---
+spring:
+  config:
+    activate:
+      on-profile: psql
+
+  datasource:
+    url: 'jdbc:postgresql://localhost:5432/test'
+    username: postgres
+    password: 111111
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
